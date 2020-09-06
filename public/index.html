@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placeholder image generator</title>
+    <style>
+        span {
+            color: #29909e;
+            padding: 0 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Placeholder image generator</h1>
+    <p>This API provides you with the ability to generate a placeholder image of your style in the dimensions that's needed.</p>
+    <hr />
+    <h2>API routes:</h2>
+
+    <h3>/image/<span>width</span>/<span>height</span></h3>
+    <p class="example">Example: </p>
+    <pre>/image/256/256</pre>
+    <p>Returns an image with the size specified in the width and height section, and with default styling.</p>
+
+    <h3>/image/<span>width</span>/<span>height</span>/<span>backgroundColor</span></h3>
+    <p class="example">Example:</p>
+    <pre>/image/256/256/orange</pre>
+    <pre>/image/256/256/hex:4545bb</pre>
+    <p>Returns an image with the size specified in the width and height section, and with a custom background color. The color can either be a string (like "blue" and "red"), or a hex color prefixed with "hex:" and without the hashtag, such as "hex:fffbbb"</p>
+
+    <h3>/image/<span>width</span>/<span>height</span>/<span>backgroundColor</span>/<span>textColor</span></h3>
+    <p class="example">Example: </p>
+    <pre>/image/256/256/orange/blue</pre>
+    <pre>/image/256/256/red/hex:454545</pre>
+    <p>Returns an image with the size specified in the width and height section, and custom colors for the background and the text. The colors can either be a string (like "blue" and "red"), or a hex color prefixed with "hex:" and without the hashtag, such as "hex:fffbbb"</p>
+
+    <h2>Rules:</h2>
+    <ul>
+        <li>Width and height can be 2048px each maximum.</li>
+        <li>Hex colors has to be prefixed by "hex:" and have the hashtag removed.</li>
+    </ul>
+
+    <hr />
+    <h3>Example:</h3>
+    <pre>/image/300/200</pre>
+    <img src="/image/300/100" alt="Example image" /><br /><br />
+    <pre>/image/600/600/orange/hex:fff</pre>
+    <img src="/image/600/600/orange/hex:fff" alt="Example image" /><br /><br />
+</body>
+</html>
